@@ -1,7 +1,7 @@
 # Flood Prediction in Uttarakhand (Machine Learning + GEE)
 
 ## Overview
-This repository contains the machine learning part of a flood risk prediction system for Uttarakhand. It covers data collection from Google Earth Engine (GEE), feature engineering, model training in Python, and a simple console-based tool to query live flood risk for any location and month. [web:59]
+This repository contains the machine learning part of a flood risk prediction system for Uttarakhand. It covers data collection from Google Earth Engine (GEE), feature engineering, model training in Python, and a simple console-based tool to query live flood risk for any location and month. 
 
 ## Contents
 - `flood_prediction_ml_model.ipynb`  
@@ -20,21 +20,21 @@ This repository contains the machine learning part of a flood risk prediction sy
   - Processed dataset used for training (flood / no-flood labels with environmental features)
 
 ## My Contribution
-- Collected and processed geospatial and environmental data using GEE. [web:59]  
+- Collected and processed geospatial and environmental data using GEE.   
 - Performed data cleaning and feature engineering for flood prediction.  
 - Trained and evaluated a Random Forest model for binary classification (flood / no flood).  
 - Integrated the trained model with live GEE data to predict flood risk for arbitrary coordinates and months.  
-- Built a simple interactive console tool to test the model for real historical cases (for example, Haridwar and Rishikesh in 2013). [web:59]
+- Built a simple interactive console tool to test the model for real historical cases (for example, Haridwar and Rishikesh in 2013). 
 
 ## Tech Stack
 - Python  
 - pandas, numpy  
 - scikit-learn  
-- Google Earth Engine Python API [web:59]  
+- Google Earth Engine Python API  
 - Jupyter Notebook  
 
 ## Dataset
-The training dataset contains roughly 1.2k samples derived from Google Earth Engine. Each record includes environmental and geospatial features such as rainfall, elevation, slope, and aspect, along with a binary label indicating whether a flood occurred. [web:59]
+The training dataset contains roughly 1.2k samples derived from Google Earth Engine. Each record includes environmental and geospatial features such as rainfall, elevation, slope, and aspect, along with a binary label indicating whether a flood occurred. 
 
 ## Model Details
 - **Algorithm:** Random Forest Classifier  
@@ -49,33 +49,37 @@ The training dataset contains roughly 1.2k samples derived from Google Earth Eng
 ```bash
 git clone https://github.com/25f1001872/flood-prediction-uttarakhand-ml.git
 cd flood-prediction-uttarakhand-ml
-
-2. Install dependencies
-bash
+```
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
-3. Set up Google Earth Engine
-You need a GEE account and credentials. Configure authentication (for example, using your usual ee.Authenticate() / ee.Initialize() flow or environment variables) so the notebooks can access GEE. [web:59]
+```
+### 3. Set up Google Earth Engine
+You need a GEE account and credentials. Configure authentication (for example, using your usual `ee.Authenticate()` / `ee.Initialize()` flow or environment variables) so the notebooks can access GEE. 
 
-4. Train or inspect the model
+### 4. Train or inspect the model
 Open the training notebook:
 
-bash
+```bash
 jupyter notebook flood_prediction_ml_model.ipynb
+```
 Re-run the cells to reproduce training, evaluation, and model saving if needed.
 
-5. Run live flood risk predictions
+
+### 5. Run live flood risk predictions
 Open the GEE integration notebook:
 
-bash
+```bash
 jupyter notebook gee_flood_api.ipynb
+```
 Then:
 
-Run the cells that initialize GEE and load flood_model.pkl.
+1.Run the cells that initialize GEE and load flood_model.pkl.
 
-Run the cells that define the helper functions for rainfall and terrain extraction.
+2.Run the cells that define the helper functions for rainfall and terrain extraction.
 
-Run the cell that defines and calls flood_assessment().
+3.Run the cell that defines and calls flood_assessment().
 
-In the console prompts, enter latitude, longitude, year, and month (or press Enter to use defaults).
+4.In the console prompts, enter latitude, longitude, year, and month (or press Enter to use defaults).
 
-The notebook prints a summary with predicted probability and risk level (LOW / MODERATE / HIGH).
+5.The notebook prints a summary with predicted probability and risk level (LOW / MODERATE / HIGH).
