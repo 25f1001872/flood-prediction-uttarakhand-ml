@@ -3,6 +3,16 @@
 ## Overview
 This repository contains the machine learning part of a flood risk prediction system for Uttarakhand. It covers data collection from Google Earth Engine (GEE), feature engineering, model training in Python, and a simple console-based tool to query live flood risk for any location and month. 
 
+## Academic Context
+This project was developed as part of **CEC201 – App Development: Geospatial Solutions for Civil Engineering**  
+(Civil Engineering Department, IIT Roorkee).
+
+The coursework required identifying a real-world civil engineering problem in the Uttarakhand region, designing a geospatial solution, and demonstrating its utility through data-driven analysis, case studies, and impact assessment. Flood prediction was selected under the *Flood* domain.
+
+## Problem Statement & Objective
+Frequent flood events in Uttarakhand pose significant risks to lives, infrastructure, and economic activity.  
+The objective of this project was to develop a machine learning–based flood risk prediction module using geospatial and environmental data, which could support early warning, planning, and disaster preparedness.
+
 ## Contents
 - `flood_prediction_ml_model.ipynb`  
   - Exploratory data analysis  
@@ -35,6 +45,7 @@ This repository contains the machine learning part of a flood risk prediction sy
 
 ## Dataset
 The training dataset contains roughly 1.2k samples derived from Google Earth Engine. Each record includes environmental and geospatial features such as rainfall, elevation, slope, and aspect, along with a binary label indicating whether a flood occurred. 
+The model was tested using historical flood events, including the 2013 Uttarakhand floods (Haridwar and Rishikesh), as part of the required case-study demonstration.
 
 ## Model Details
 - **Algorithm:** Random Forest Classifier  
@@ -42,6 +53,9 @@ The training dataset contains roughly 1.2k samples derived from Google Earth Eng
 - **Key Features:** GEE-derived rainfall and terrain variables  
 - **Metrics:** Accuracy, precision, recall, F1-score  
 - **Saved Model:** `flood_model.pkl`
+
+## Documentation
+The official course brief and evaluation guidelines for **CEC201 – App Development: Geospatial Solutions for Civil Engineering** are provided in the `/docs` folder for reference.
 
 ## How to Run
 
